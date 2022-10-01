@@ -75,15 +75,8 @@ public class _InjectableViewControllerHost<Hosted: InjectViewControllerType>: In
         self.hidesBottomBarWhenPushed = instance.hidesBottomBarWhenPushed
         #endif
 #endif
-        
-        instance.view.translatesAutoresizingMaskIntoConstraints = false
-        [
-            instance.view.topAnchor.constraint(equalTo: view.topAnchor),
-            instance.view.leadingAnchor.constraint(equalTo: view.leadingAnchor),
-            instance.view.bottomAnchor.constraint(equalTo: view.bottomAnchor),
-            instance.view.trailingAnchor.constraint(equalTo: view.trailingAnchor)
-        ]
-        .forEach { $0.isActive = true }
+
+		instance.view.frame = view.bounds
     }
     
     @available(*, unavailable)
